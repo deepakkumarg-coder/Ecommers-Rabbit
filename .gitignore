@@ -12,8 +12,9 @@ Frontend/node_modules/
 Backend/node_modules/
 
 # Environment variables
-Frontend/.env
-Backend/.env
+.env
+.env.*
+!.env.example
 
 # OS files
 .DS_Store
