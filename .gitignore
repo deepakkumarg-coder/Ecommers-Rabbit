@@ -3,6 +3,10 @@
 *.logs
 *.log
 
+#ignore Node Modules
+
+node_modules/
+
 # Node Modules
 Frontend/node_modules/
 Backend/node_modules/
