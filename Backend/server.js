@@ -50,6 +50,10 @@ app.use("/admin/api/products", adminProductRoute);
 app.use("/admin/api/orders", adminOrderRoute);
 
 // Backend server Listening configurations
+app.get("/",(req,res,next)=>{
+  console.log("Welcome to my Application");
+  
+})
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
