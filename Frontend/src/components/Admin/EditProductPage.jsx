@@ -10,6 +10,7 @@ import {
 } from "../../redux/slice/adminproductSlice";
 import { RxCross2 } from "react-icons/rx";
 import { Alert, Spin } from "antd";
+import Loader from "../Common/Loader";
 
 function EditProductPage() {
   const dispatch = useDispatch();
@@ -125,9 +126,7 @@ function EditProductPage() {
       {/*Form Data */}
       <div>
         {loading || isImageUpload ? (
-          <div className="flex justify-center items-center py-16">
-            <Spin size="large" tip="Loading products..." />
-          </div>
+          <Loader />
         ) : error ? (
           <div className="py-10">
             <Alert

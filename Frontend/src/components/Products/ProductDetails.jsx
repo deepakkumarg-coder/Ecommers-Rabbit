@@ -9,6 +9,7 @@ import {
   fetchSimilarProduct,
 } from "../../redux/slice/productSlice";
 import { addToCart } from "../../redux/slice/cartSlice";
+import Loader from "../Common/Loader";
 
 function ProductDetails({ productId }) {
   const { id = "" } = useParams();
@@ -118,9 +119,7 @@ function ProductDetails({ productId }) {
       <h2 className="text-3xl font-bold text-center">Best Seller</h2>
       <div className="p-6">
         {loading ? (
-          <div className="flex justify-center items-center py-16">
-            <Spin size="large" tip="Loading products..." />
-          </div>
+          <Loader />
         ) : error ? (
           <Alert
             message="Failed to load products"

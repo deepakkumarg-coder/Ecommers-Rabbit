@@ -9,6 +9,7 @@ import FeaturedSection from "../components/Products/FeaturedSection";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsByFilter } from "../redux/slice/productSlice";
 import axios from "axios";
+import Loader from "../components/Common/Loader";
 
 function Home() {
   const dispatch = useDispatch();
@@ -43,11 +44,7 @@ function Home() {
       <Hero />
       <GenderCollection />
       <NewArrival />
-      {bestSeller ? (
-        <ProductDetails productId={bestSeller._id} />
-      ) : (
-        <p className="text-center"> Loading the Best Seller Product</p>
-      )}
+      {bestSeller ? <ProductDetails productId={bestSeller._id} /> : <Loader />}
 
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-2">

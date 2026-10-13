@@ -60,7 +60,7 @@ useEffect(() => {
       {/*Filter Side bar */}
       <div
         ref={sideRef}
-        className={`${isSideBarOpen ? "translate-x-0" : "-translate-x-full"} bg-white fixed inset-y-0 left-0 w-54 overflow-y-auto transition-transform duration-300 lg:static lg:translate-x-0 shrink-0 border`}
+        className={`${isSideBarOpen ? "translate-x-0" : "-translate-x-full"} bg-white fixed inset-y-0 left-0 w-54 overflow-y-auto transition-transform duration-300 lg:static lg:translate-x-0 shrink-0`}
       >
         <FilterLayout />
       </div>

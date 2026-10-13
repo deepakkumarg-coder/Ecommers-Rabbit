@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { fetchAllOrder } from "../redux/slice/adminorderSlice";
 import { fertchAdminProducts } from "../redux/slice/adminproductSlice";
 import { Alert, Spin } from "antd";
+import Loader from "../components/Common/Loader";
 
 function AdminPages() {
   const dispatch = useDispatch();
@@ -28,12 +29,12 @@ function AdminPages() {
   return (
     <div className="max-w-7xl mx-auto p-6">
       <Link to={"/admin"} className="block ">
-        <h1 className="text-3xl font-bold mb-6 cursor-pointer">Admin Dashboard</h1>
+        <h1 className="text-3xl font-bold mb-6 cursor-pointer">
+          Admin Dashboard
+        </h1>
       </Link>
       {productloading || orderloading ? (
-        <div className="flex justify-center items-center py-16">
-          <Spin size="large" tip="Loading products..." />
-        </div>
+        <Loader />
       ) : producterror ? (
         <>
           <Alert
@@ -54,7 +55,7 @@ function AdminPages() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="p-4 rounded-lg shadow-md">
             <h1 className="text-xl font-semibold tracking-tighter">Revenue</h1>
-            <p className="text-2xl">₹ {totalSales}</p>
+            <p className="text-2xl">₹ {Number(totalSales || 0).toFixed(2)}</p>
           </div>
           <div className="p-4 rounded-lg shadow-md">
             <h1 className="text-xl font-semibold tracking-tighter">

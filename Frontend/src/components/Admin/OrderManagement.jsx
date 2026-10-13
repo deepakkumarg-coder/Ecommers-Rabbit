@@ -5,6 +5,7 @@ import {
   updateAdminOrder,
 } from "../../redux/slice/adminorderSlice";
 import { Alert, Spin } from "antd";
+import Loader from "../Common/Loader";
 
 function OrderManagement() {
   const dispatch = useDispatch();
@@ -33,9 +34,7 @@ function OrderManagement() {
           </thead>
           <tbody>
             {loading ? (
-              <div className="flex justify-center items-center py-16">
-                <Spin size="large" tip="Loading products..." />
-              </div>
+              <Loader />
             ) : error ? (
               <Alert
                 message="Failed to load products"

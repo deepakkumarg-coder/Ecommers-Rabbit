@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Spin, Alert } from "antd";
+import Loader from "../Common/Loader";
 
 function ProductGrid({ products, loading, error }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 flex-grow">
       {loading ? (
-        <div className="flex justify-center items-center py-16">
-          <Spin size="large" tip="Loading products..." />
-        </div>
+        <Loader />
       ) : error ? (
         <Alert
           message="Failed to load products"

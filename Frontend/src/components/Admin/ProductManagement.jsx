@@ -7,6 +7,7 @@ import {
 } from "../../redux/slice/adminproductSlice";
 import { FiPlus } from "react-icons/fi";
 import { Alert, Spin } from "antd";
+import Loader from "../Common/Loader";
 function ProductManagement() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function ProductManagement() {
         <button
           type="submit"
           onClick={handleClick}
-          className="bg-green-500 py-2 px-4 text-white rounded hover:bg-green-700 flex justify-between items-center cursor-pointer space-x-2"
+          className="bg-green-500 py-2 px-4 text-white rounded hover:bg-green-700 flex justify-center items-center cursor-pointer space-x-2"
         >
           <FiPlus />
           <span>Create Product</span>
@@ -57,9 +58,7 @@ function ProductManagement() {
           </thead>
           <tbody>
             {loading ? (
-              <div className="flex justify-center items-center py-16">
-                <Spin size="large" tip="Loading products..." />
-              </div>
+              <Loader />
             ) : error ? (
               <Alert
                 message="Failed to load products"

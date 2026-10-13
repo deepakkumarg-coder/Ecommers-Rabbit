@@ -1,0 +1,79 @@
+.rb-loader {
+  --rb-accent: #2bcb8a;
+  --rb-track: #e6e8f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rb-loader--full {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+}
+
+.rb-loader__spinner {
+  position: relative;
+  width: var(--rb-size, 120px);
+  height: var(--rb-size, 120px);
+}
+
+/* the logo sits in the middle, inside the ring */
+.rb-loader__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56%;
+  height: 56%;
+  transform: translate(-50%, -50%);
+  border-radius: 22%;
+}
+
+/* the ring is what spins */
+.rb-loader__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: rb-spin 1.1s linear infinite;
+}
+
+.rb-loader__track,
+.rb-loader__arc {
+  fill: none;
+  stroke-width: 4;
+}
+
+.rb-loader__track {
+  stroke: var(--rb-track);
+}
+
+.rb-loader__arc {
+  stroke: var(--rb-accent);
+  stroke-linecap: round;
+  /* circumference is about 339, so this draws roughly a quarter of the circle */
+  stroke-dasharray: 90 249;
+}
+
+@keyframes rb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* visually hidden text for screen readers */
+.rb-loader__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-loader__ring {
+    animation-duration: 3s;
+  }
+}
