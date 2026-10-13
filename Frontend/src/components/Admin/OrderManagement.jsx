@@ -10,6 +10,12 @@ import Loader from "../Common/Loader";
 function OrderManagement() {
   const dispatch = useDispatch();
   const { orders, loading, error } = useSelector((state) => state.adminorder);
+
+  
+  useEffect(() => {
+    document.title = "Admin Order | Page";
+  }, []);
+
   useEffect(() => {
     dispatch(fetchAllOrder());
   }, [dispatch]);

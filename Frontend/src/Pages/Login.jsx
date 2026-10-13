@@ -20,6 +20,11 @@ function Login() {
   const isCheckout = redirect.includes("checkout");
 
   useEffect(() => {
+    document.title = "Login Page";
+  }, []);
+
+
+  useEffect(() => {
     if (user) {
       if (cart.products.length > 0 && guestId) {
         dispatch(mergeCart({ guestId, user })).then(() => {
@@ -41,7 +46,6 @@ function Login() {
         email: "",
         password: "",
       });
-
     } catch (err) {
       toast.error(
         typeof err === "string"

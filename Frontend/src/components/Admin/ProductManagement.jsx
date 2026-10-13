@@ -16,6 +16,10 @@ function ProductManagement() {
   );
 
   useEffect(() => {
+    document.title = "Admin Product | Page";
+  }, []);
+
+  useEffect(() => {
     dispatch(fertchAdminProducts());
   }, [dispatch]);
 

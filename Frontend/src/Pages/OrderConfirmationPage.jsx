@@ -6,6 +6,11 @@ function OrderConfirmationPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { checkout } = useSelector((state) => state.checkout);
+
+  useEffect(() => {
+    document.title = "Oerder Confirmation Page";
+  }, []);
+
   useEffect(() => {
     if (checkout && checkout._id) {
       dispatch(clearCart());

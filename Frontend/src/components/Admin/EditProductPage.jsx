@@ -40,6 +40,11 @@ function EditProductPage() {
   const [isImageUpload, setIsImageUplaoding] = useState(false);
 
   useEffect(() => {
+    document.title =
+      mode === "edit" ? "Edit Product | Page" : "Create Product | Page";
+  }, [mode]);
+
+  useEffect(() => {
     if (mode === "edit") {
       dispatch(fetchProductDetails(id));
     }

@@ -22,6 +22,9 @@ function AdminPages() {
   } = useSelector((state) => state.adminorder);
 
   useEffect(() => {
+    document.title = "Admin | Page";
+  }, []);
+  useEffect(() => {
     dispatch(fetchAllOrder());
     dispatch(fertchAdminProducts());
   }, [dispatch]);

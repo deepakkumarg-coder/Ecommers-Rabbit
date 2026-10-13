@@ -17,6 +17,11 @@ function Home() {
   const [bestSeller, setBestSeller] = useState(null);
 
   useEffect(() => {
+    document.title = "Home Page";
+  }, []);
+
+  
+  useEffect(() => {
     dispatch(
       fetchProductsByFilter({
         gender: "Women",

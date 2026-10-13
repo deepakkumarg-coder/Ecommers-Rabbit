@@ -8,6 +8,11 @@ function OrderDetails() {
   const dispatch = useDispatch();
   const { orderDetails, loading, error } = useSelector((state) => state.order);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Order Details | Page";
+  }, []);
+
   useEffect(() => {
     dispatch(fetchOrderDetails(id));
   }, [id, dispatch]);

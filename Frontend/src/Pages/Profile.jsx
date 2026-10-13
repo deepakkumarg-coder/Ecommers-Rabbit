@@ -11,6 +11,10 @@ function Profile() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = "Profile Page";
+  }, []);
+
+  useEffect(() => {
     if (!user) {
       navigate("/login");
     }

@@ -19,6 +19,11 @@ function Register() {
 
   const redirect = new URLSearchParams(location.search).get("redirect") || "/";
   const isCheckout = redirect.includes("checkout");
+
+  useEffect(() => {
+    document.title = "Register Page";
+  }, []);
+
   useEffect(() => {
     if (user) {
       if (cart.products.length > 0 && guestId) {
@@ -121,7 +126,10 @@ function Register() {
           </button>
           <p className="text-sm mt-6 text-center space-x-2">
             Already have an account ?{" "}
-            <Link to={`/login?redirect${encodeURIComponent(redirect)}` }className="text-blue-600 mr-2">
+            <Link
+              to={`/login?redirect${encodeURIComponent(redirect)}`}
+              className="text-blue-600 mr-2"
+            >
               Login
             </Link>
           </p>

@@ -22,6 +22,11 @@ function Checkout() {
   });
 
   useEffect(() => {
+    document.title = "Checkout Page";
+  }, []);
+  
+
+  useEffect(() => {
     if (!cart || cart?.products?.length === 0) {
       navigate("/");
     }
@@ -84,8 +89,6 @@ function Checkout() {
           },
         },
       );
-      console.log("this is status", response);
-
       if (response.status === 201) {
         navigate("/order-confirmation");
       } else {

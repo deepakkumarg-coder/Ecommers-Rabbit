@@ -19,6 +19,10 @@ function UserManagment() {
   });
 
   useEffect(() => {
+    document.title = "Admin User | Page";
+  }, []);
+
+  useEffect(() => {
     dispatch(fetchAllUsers());
   }, [dispatch]);
 

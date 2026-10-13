@@ -33,6 +33,11 @@ function ProductDetails({ productId }) {
   const productFetchId = productId || id;
 
   useEffect(() => {
+    if (id) {
+      document.title = "Product Page";
+    }
+  }, []);
+  useEffect(() => {
     if (productFetchId) {
       dispatch(fetchProductDetails(productFetchId));
       dispatch(fetchSimilarProduct(productFetchId));
