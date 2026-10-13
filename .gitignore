@@ -1,15 +1,15 @@
-#logs
 
+# Logs
 *.logs
+*.log
 
- #Node Modules
- Frontend/node_modules/
- Backend/node_modules/
+# Node Modules
+Frontend/node_modules/
+Backend/node_modules/
 
-#Env variables
+# Environment variables
+Frontend/.env
+Backend/.env
 
- Frontend/.env
- Backend/.env
-
-
-.Ds_Store
+# OS files
+.DS_Store
